@@ -1,0 +1,146 @@
+.about-us {
+    background-color: $primaryBackgroundColor;
+    padding: 50px 0;
+
+    .container {
+
+        .box {
+            display: flex;
+            margin: 0 -15px;
+
+            .photo {
+                padding: 0 15px;
+                width: 35%;
+
+                @media (max-width: 980px) {
+                    display: none;
+                }
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .col-right {
+                padding: 0 15px;
+                width: 65%;
+
+                @media (max-width: 980px) {
+                    width: 100%;
+                }
+
+                h3 {
+                    margin: 0 0 20px 0;
+                    font-size: 20px;
+                    font-weight: 500;
+                    line-height: 1.3;
+
+                    span {
+                        color: $secondaryTextColor;
+                    }
+                }
+
+                p {
+                    margin: 0 0 20px 0;
+                    line-height: 3;
+                    letter-spacing: 0.8px;
+                }
+
+                .address-info {
+
+                    ul {
+                        @include reset-list;
+                        display: flex;
+                        flex-wrap: wrap;
+
+                        li {
+                            width: 50%;
+                            margin: 0 0 15px 0;
+                            display: flex;
+
+                            @media (max-width: 600px) {
+                                width: 100%;
+                            }
+
+                            i {
+                                color: $secondaryTextColor;
+                                margin: 0 10px 0 0;
+                            }
+
+                            .label {
+                                display: block;
+                                min-width: 90px;
+                                font-weight: 700;
+                                margin-right: 5px;
+                            }
+
+                            .value {
+                                word-break: break-all;
+                                padding-right: 10px;
+                            }
+                        }
+                    }
+                }
+
+                .buttons {
+
+                    ul {
+                        @include reset-list;
+                        display: flex;
+                        flex-wrap: wrap;
+
+                        li {
+                            margin: 20px 20px 0 0;
+
+                            &:last-child {
+                                margin-right: 0;
+                            }
+
+                            a {
+                                background-color: $buttonBackgroundColor;
+                                padding: 15px 45px;
+                                text-decoration: none;
+                                letter-spacing: 0.8px;
+                                font-weight: 300;
+                                position: relative;
+                                overflow: hidden;
+                                display: block;
+
+                                span {
+                                    z-index: 2;
+                                    position: relative;
+                                }
+
+                                &::before {
+                                    content: "";
+                                    position: absolute;
+                                    top: 0px;
+                                    left: -25%;
+                                    height: 100%;
+                                    width: 0%;
+                                    background-color: $buttonHoverBackgroundColor;
+                                    transition: .5s;
+                                    transform: skew(50deg);
+                                    z-index: 1;
+                                }
+
+                                &:hover {
+
+                                    &::before {
+                                        content: "";
+                                        width: 140%;
+                                        background-color: $buttonHoverBackgroundColor;
+                                    }
+
+                                    span {
+                                        color: $buttonHoverFontColor;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

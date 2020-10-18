@@ -1,0 +1,64 @@
+.experience {
+    background-color: $secondaryBackgroundColor;
+    padding: 100px 0;
+
+    .experience-box {
+        margin: 0 -15px;
+        display: flex;
+        flex-wrap: wrap;
+
+        .experience-column {
+            width: 50%;
+            padding: 0 15px;
+            position: relative;
+
+            @media (max-width: 800px) {
+                width: 100%;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                height: 100%;
+                width: 1px;
+                background-color: rgba($color: #ffffff, $alpha: 0.2);
+                left: 15px;
+                top: 0;
+            }
+
+            .single-item {
+                display: flex;
+                position: relative;
+                z-index: 99;
+
+                .icon {
+                    font-size: 18px;
+                    color: $secondaryTextColor;
+                    margin: 0 18px 0 -15px;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    background-color: $primaryTextColor;
+                    flex: 0 0 30px;
+                    line-height: 30px;
+                    text-align: center;
+
+
+                }
+
+                .text {
+                    margin: 0 0 30px 0;
+
+                    p {
+                        margin: 0;
+                        font-family: $mainFontFamil;
+                    }
+
+                    h3 {
+                        font-family: $headerFontFamily;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,91 @@
+html {
+    font-size: $defaultFontSize;
+}
+
+body {
+    font-family: $mainFontFamil;
+    color: $primaryTextColor;
+    overflow-x: hidden;
+    &.no-menu {
+        @media (min-width: 1201px) {
+            main {
+                padding-left: 0;
+            }
+            .menu {
+                left: -400px;
+                .slider {
+                    right: -40px;
+                    i {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ---------------- MAIN ----------------
+main {
+    padding-left: 400px;
+    transition: .3s;
+    @media (max-width: 1200px) {
+        padding-left: 0;
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 1170px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.default-header {
+    margin: 0 0 50px 0;
+    p {
+        margin: 0 0 10px 0;
+        font-size: 14px;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: $secondaryTextColor;
+    }
+    h2 {
+        margin: 0;
+        text-transform: uppercase;
+        font-weight: 700;
+        @include fluid-type-static(20px, 35px);
+        font-family: $mainFontFamil;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: $primaryTextColor;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+// -------------- FOOTER ----------------
+footer {
+    height: 100px;
+    width: 100%;
+    background-color: $secondaryBackgroundColor;
+    // padding-left: 400px;
+    margin-bottom: 0;
+    margin-top: 0;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.8;
+        letter-spacing: 0.5px;
+        color: #ffffff;
+        font-family: 'Montserrat', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+}
